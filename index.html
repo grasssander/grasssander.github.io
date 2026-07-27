@@ -10,11 +10,13 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column; /* ★縦に並べる設定 */
+      align-items: center;    /* ★中央寄せ */
+      min-height: 100vh;
+      box-sizing: border-box;
     }
     .card {
       background: white;
@@ -23,7 +25,8 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       text-align: center;
       max-width: 400px;
-      width: 90%;
+      width: 100%;
+      box-sizing: border-box;
     }
     h1 { font-size: 1.25rem; color: #333; margin-bottom: 0.5rem; }
     p { font-size: 0.85rem; color: #666; margin-bottom: 1.5rem; }
@@ -56,10 +59,26 @@
     .btn-secondary { background: #e2e8f0; color: #475569; }
     .btn-secondary:hover { background: #cbd5e1; }
     .footer-note { font-size: 0.75rem; color: #94a3b8; margin-top: 1.5rem; }
+
+    /* ★解説文用のCSS */
+    .info-box {
+      width: 100%;
+      max-width: 480px;
+      margin-top: 30px;
+      text-align: left;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      line-height: 1.7;
+      color: #444;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
 
+  <!-- ツール本体 -->
   <div class="card">
     <h1>16桁強固パスワード</h1>
     <p>英大・小文字＋数字＋記号が最初からフルセット！</p>
@@ -71,22 +90,24 @@
 
     <div class="footer-note">※通信なし。お使いの端末内で安全に生成されています。</div>
   </div>
-    <div style="width: 100%; max-width: 500px; margin: 30px auto 0 auto; text-align: left; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); line-height: 1.7; color: #444; box-sizing: border-box; clear: both;">
-      <h2 style="font-size: 1.1rem; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-top: 0; color: #1e293b;">16桁のランダムパスワード自動生成ツールについて</h2>
-      <p style="font-size: 0.9rem; margin-bottom: 15px;">当ツールは、セキュリティ強度の高い16桁のランダムパスワードを一瞬で自動生成する無料Webツールです。英大文字・小文字・数字・記号を複雑に組み合わせ、安全性の高い英数字列を作成できます。</p>
-      
-      <h3 style="font-size: 0.95rem; margin-top: 20px; margin-bottom: 5px; color: #1e293b;">なぜ16桁のパスワードが推奨されるのか？</h3>
-      <p style="font-size: 0.88rem; margin-bottom: 15px;">8桁〜10桁程度の短いパスワードは、現在のコンピュータの処理能力では短い時間で解読されてしまうリスクがあります。16桁以上の長さを確保することで、総当たり攻撃（ブルートフォースアタック）に対する耐性が飛躍的に向上し、アカウントの乗っ取りや不正アクセスを強力に防ぐことができます。</p>
 
-      <h3 style="font-size: 0.95rem; margin-top: 20px; margin-bottom: 5px; color: #1e293b;">当ツールの安全性（安心設計）</h3>
-      <p style="font-size: 0.88rem; margin: 0;">お使いのブラウザ内（ローカル環境）のみで処理されます。作成されたパスワードが外部サーバーに送信されたり、データベースに保存されることは一切ありませんので、安心してご利用いただけます。</p>
-    </div>
+  <!-- 解説文（AdSense対策） -->
+  <div class="info-box">
+    <h2 style="font-size: 1.1rem; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-top: 0; color: #1e293b;">16桁のランダムパスワード自動生成ツールについて</h2>
+    <p style="font-size: 0.9rem; margin-bottom: 15px;">当ツールは、セキュリティ強度の高い16桁のランダムパスワードを一瞬で自動生成する無料Webツールです。英大文字・小文字・数字・記号を複雑に組み合わせ、安全性の高い英数字列を作成できます。</p>
+    
+    <h3 style="font-size: 0.95rem; margin-top: 20px; margin-bottom: 5px; color: #1e293b;">なぜ16桁のパスワードが推奨されるのか？</h3>
+    <p style="font-size: 0.88rem; margin-bottom: 15px;">8桁〜10桁程度の短いパスワードは、現在のコンピュータの処理能力では短い時間で解読されてしまうリスクがあります。16桁以上の長さを確保することで、総当たり攻撃（ブルートフォースアタック）に対する耐性が飛躍的に向上し、アカウントの乗っ取りや不正アクセスを強力に防ぐことができます。</p>
+
+    <h3 style="font-size: 0.95rem; margin-top: 20px; margin-bottom: 5px; color: #1e293b;">当ツールの安全性（安心設計）</h3>
+    <p style="font-size: 0.88rem; margin: 0;">お使いのブラウザ内（ローカル環境）のみで処理されます。作成されたパスワードが外部サーバーに送信されたり、データベースに保存されることは一切ありませんので、安心してご利用いただけます。</p>
+  </div>
+
   <script>
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
 
     function generatePassword() {
       let password = "";
-      // 暗号学的に安全な乱数（Crypto API）を使用
       const array = new Uint32Array(16);
       window.crypto.getRandomValues(array);
       for (let i = 0; i < 16; i++) {
@@ -102,7 +123,6 @@
       });
     }
 
-    // ページが開いた瞬間に生成実行！
     window.onload = generatePassword;
   </script>
 
